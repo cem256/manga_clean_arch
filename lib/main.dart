@@ -8,7 +8,7 @@ import 'package:manga_clean_arch/app/router/app_router.dart';
 import 'package:manga_clean_arch/app/theme/cubit/theme_cubit.dart';
 import 'package:manga_clean_arch/app/theme/dark/app_theme_dark.dart';
 import 'package:manga_clean_arch/app/theme/light/app_theme_light.dart';
-import 'package:manga_clean_arch/service_locator.dart';
+import 'package:manga_clean_arch/locator.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
@@ -24,7 +24,7 @@ Future<void> main() async {
   // Load environment variables
   await dotenv.load(fileName: Env.fileName);
   // Initialize ServiceLocator
-  ServiceLocator.init(baseUrl: Env.baseUrl);
+  Locator.locateServices(baseUrl: Env.baseUrl);
 
   runApp(MangaAppCleanArch());
 }

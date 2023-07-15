@@ -14,7 +14,7 @@ final class PopularState extends Equatable {
   final Failure? failure;
 
   @override
-  List<Object> get props => [status, mangas, hasReachedMax];
+  List<Object?> get props => [status, mangas, hasReachedMax, failure];
 
   PopularState copyWith({
     ViewStatus? status,

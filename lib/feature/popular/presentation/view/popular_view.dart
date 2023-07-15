@@ -3,17 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manga_clean_arch/app/router/app_router.gr.dart';
 import 'package:manga_clean_arch/app/theme/cubit/theme_cubit.dart';
-import 'package:manga_clean_arch/app/theme/theme_constants.dart';
+import 'package:manga_clean_arch/app/widgets/card/custom_manga_card.dart';
 import 'package:manga_clean_arch/app/widgets/error/custom_error_widget.dart';
-import 'package:manga_clean_arch/app/widgets/image/custom_network_image.dart';
 import 'package:manga_clean_arch/core/enums/view_status.dart';
 import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 import 'package:manga_clean_arch/feature/popular/presentation/bloc/popular_bloc.dart';
-import 'package:manga_clean_arch/service_locator.dart';
+import 'package:manga_clean_arch/locator.dart';
 
 part '../widgets/popular_view_appbar.dart';
-part '../widgets/popular_view_manga_card.dart';
 part '../widgets/popular_view_success_widget.dart';
 
 @RoutePage()
@@ -25,7 +23,7 @@ class PopularView extends StatelessWidget {
     return Scaffold(
       appBar: const _PopularViewAppBar(),
       body: BlocProvider<PopularBloc>(
-        create: (context) => ServiceLocator.getIt<PopularBloc>()..add(MangasFetched()),
+        create: (context) => Locator.instance<PopularBloc>()..add(MangasFetched()),
         child: const PopularViewBody(),
       ),
     );

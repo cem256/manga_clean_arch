@@ -51,7 +51,7 @@ class _PopularViewSuccessWidgetState extends State<_PopularViewSuccessWidget> {
               crossAxisCount: 2,
             ),
             delegate: SliverChildBuilderDelegate(
-              (context, index) => _PopularViewMangaCard(
+              (context, index) => CustomMangaCard(
                 manga: widget.mangas[index],
               ),
               childCount: widget.mangas.length,

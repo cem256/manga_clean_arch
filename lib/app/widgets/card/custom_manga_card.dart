@@ -1,7 +1,13 @@
-part of '../view/popular_view.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/widgets.dart';
+import 'package:manga_clean_arch/app/router/app_router.gr.dart';
+import 'package:manga_clean_arch/app/theme/theme_constants.dart';
+import 'package:manga_clean_arch/app/widgets/image/custom_network_image.dart';
+import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
+import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
-class _PopularViewMangaCard extends StatelessWidget {
-  const _PopularViewMangaCard({required this.manga});
+class CustomMangaCard extends StatelessWidget {
+  const CustomMangaCard({required this.manga, super.key});
 
   final MangaEntity manga;
 

@@ -16,7 +16,7 @@ class PopularBloc extends Bloc<PopularEvent, PopularState> {
   PopularBloc({required UCGetPopularMangas getPopularMangas})
       : _getPopularMangas = getPopularMangas,
         super(const PopularState()) {
-    on<PopularEvent>(
+    on<MangasFetched>(
       _onMangasFetched,
       transformer: EventTransformerUtils.throttle(DurationConstants.medium()),
     );
@@ -27,7 +27,7 @@ class PopularBloc extends Bloc<PopularEvent, PopularState> {
 
   final UCGetPopularMangas _getPopularMangas;
 
-  Future<void> _onMangasFetched(PopularEvent event, Emitter<PopularState> emit) async {
+  Future<void> _onMangasFetched(MangasFetched event, Emitter<PopularState> emit) async {
     if (state.hasReachedMax) return;
     if (state.status == ViewStatus.loading) {
       final result = await _getPopularMangas(page: _page, limit: _limit);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
+import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget({required this.failure, super.key, this.onPressed});
@@ -18,6 +19,7 @@ class CustomErrorWidget extends StatelessWidget {
             UnknownFailure() => 'Unknown Failure',
             NullResponseFailure() => 'Cannot Fetch Data',
           },
+          style: context.textTheme.bodyLarge,
         ),
         TextButton.icon(
           label: const Text('Retry'),
