@@ -1,6 +1,6 @@
 part of 'popular_bloc.dart';
 
-class PopularState extends Equatable {
+final class PopularState extends Equatable {
   const PopularState({
     this.failure,
     this.status = ViewStatus.loading,

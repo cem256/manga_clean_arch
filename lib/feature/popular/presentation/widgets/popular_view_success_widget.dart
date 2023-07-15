@@ -1,21 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
-import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
-import 'package:manga_clean_arch/feature/popular/presentation/bloc/popular_bloc.dart';
-import 'package:manga_clean_arch/feature/popular/presentation/widgets/manga_card.dart';
+part of '../view/popular_view.dart';
 
-class PopularViewSuccessWidget extends StatefulWidget {
-  const PopularViewSuccessWidget({required this.mangas, required this.hasReachedMax, super.key});
+class _PopularViewSuccessWidget extends StatefulWidget {
+  const _PopularViewSuccessWidget({required this.mangas, required this.hasReachedMax});
 
   final List<MangaEntity> mangas;
   final bool hasReachedMax;
 
   @override
-  State<PopularViewSuccessWidget> createState() => _PopularViewSuccessWidgetState();
+  State<_PopularViewSuccessWidget> createState() => _PopularViewSuccessWidgetState();
 }
 
-class _PopularViewSuccessWidgetState extends State<PopularViewSuccessWidget> {
+class _PopularViewSuccessWidgetState extends State<_PopularViewSuccessWidget> {
   final _scrollController = ScrollController();
 
   @override
@@ -56,7 +51,7 @@ class _PopularViewSuccessWidgetState extends State<PopularViewSuccessWidget> {
               crossAxisCount: 2,
             ),
             delegate: SliverChildBuilderDelegate(
-              (context, index) => MangaCard(
+              (context, index) => _PopularViewMangaCard(
                 manga: widget.mangas[index],
               ),
               childCount: widget.mangas.length,
