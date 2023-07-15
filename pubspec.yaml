@@ -33,6 +33,7 @@ dependencies:
   dartz: ^0.10.1
   equatable: ^2.0.5
   flutter_dotenv: ^5.1.0
+  stream_transform: ^2.1.0
 
   # UI
   cupertino_icons: ^1.0.2

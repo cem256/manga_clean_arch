@@ -1,3 +1,3 @@
 abstract final class EndpointConstants {
-  static const String popular = 'top/';
+  static const String popular = '/top/manga';
 }

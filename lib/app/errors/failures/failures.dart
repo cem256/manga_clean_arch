@@ -11,11 +11,8 @@ final class UnknownFailure extends Failure {
 }
 
 final class NetworkFailure extends Failure {
-  NetworkFailure(this.message);
-
-  final String message;
   @override
-  List<Object?> get props => [message];
+  List<Object?> get props => [];
 }
 
 final class NullResponseFailure extends Failure {

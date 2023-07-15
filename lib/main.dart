@@ -5,6 +5,7 @@ import 'package:manga_clean_arch/app/env/env.dart';
 import 'package:manga_clean_arch/app/router/app_router.dart';
 import 'package:manga_clean_arch/app/theme/dark/app_theme_dark.dart';
 import 'package:manga_clean_arch/app/theme/light/app_theme_light.dart';
+import 'package:manga_clean_arch/service_locator.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +15,8 @@ Future<void> main() async {
   );
   // Load environment variables
   await dotenv.load(fileName: Env.fileName);
+  // Initialize ServiceLocator
+  ServiceLocator.init(baseUrl: Env.baseUrl);
 
   runApp(MangaAppCleanArch());
 }
