@@ -24,7 +24,7 @@ class NavbarView extends StatelessWidget {
               label: 'Popular',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.star),
+              icon: Icon(Icons.favorite),
               label: 'Favorites',
             ),
           ],
