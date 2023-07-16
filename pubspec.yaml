@@ -16,8 +16,9 @@ dependencies:
   flutter_bloc: ^8.1.3
 
   # Caching
+  hive_flutter: ^1.1.0
   hydrated_bloc: ^9.1.2
-
+  
   # Networking
   dio: ^5.2.1+1
   dio_smart_retry: ^5.0.0
@@ -58,6 +59,7 @@ dev_dependencies:
 
   # Code Generation
   build_runner: ^2.4.6
+  hive_generator: ^2.0.0
   json_serializable: ^6.7.1
   auto_route_generator: ^7.2.0
 

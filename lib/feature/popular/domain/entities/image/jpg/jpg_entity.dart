@@ -1,10 +1,16 @@
 import 'package:equatable/equatable.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:manga_clean_arch/app/constants/cache_constants.dart';
 
-class JpgEntity extends Equatable {
-  const JpgEntity({required this.imageUrl});
+part 'jpg_entity.g.dart';
 
-  factory JpgEntity.initial() => const JpgEntity(imageUrl: '');
+@HiveType(typeId: CacheConstants.jpgEntityTypeId)
+class JpgEntity extends HiveObject with EquatableMixin {
+  JpgEntity({required this.imageUrl});
 
+  factory JpgEntity.initial() => JpgEntity(imageUrl: '');
+
+  @HiveField(0)
   final String imageUrl;
 
   @override

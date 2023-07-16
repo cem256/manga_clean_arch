@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:manga_clean_arch/feature/popular/data/models/image/image_model.dart';
-
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
 part 'manga_model.g.dart';

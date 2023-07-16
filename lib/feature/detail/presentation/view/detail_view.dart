@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manga_clean_arch/app/theme/theme_constants.dart';
 import 'package:manga_clean_arch/app/widgets/image/custom_network_image.dart';
 import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
+import 'package:manga_clean_arch/feature/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
 @RoutePage()
@@ -62,13 +64,19 @@ class DetailView extends StatelessWidget {
                   bottom: 0,
                   child: Padding(
                     padding: context.paddingAllDefault,
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite,
-                        size: context.highValue,
-                        color: context.theme.disabledColor,
-                      ),
+                    child: BlocBuilder<FavoritesBloc, FavoritesState>(
+                      builder: (context, state) {
+                        return IconButton(
+                          onPressed: () => context.read<FavoritesBloc>().add(FavoriteButtonTapped(manga)),
+                          icon: Icon(
+                            Icons.favorite,
+                            size: context.highValue,
+                            color: state.mangas.any((favorite) => favorite.malId == manga.malId)
+                                ? context.theme.colorScheme.error
+                                : context.theme.colorScheme.outline,
+                          ),
+                        );
+                      },
                     ),
                   ),
                 )
