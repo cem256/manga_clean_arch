@@ -40,36 +40,10 @@ class _PopularViewSuccessWidgetState extends State<_PopularViewSuccessWidget> {
   Widget build(BuildContext context) {
     return Padding(
       padding: context.paddingAllDefault,
-      child: CustomScrollView(
-        controller: _scrollController,
-        slivers: [
-          SliverGrid(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: context.defaultValue,
-              crossAxisSpacing: context.defaultValue,
-              childAspectRatio: 3 / 4,
-              crossAxisCount: 2,
-            ),
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => CustomMangaCard(
-                manga: widget.mangas[index],
-              ),
-              childCount: widget.mangas.length,
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: context.defaultValue,
-                ),
-                const Center(
-                  child: CircularProgressIndicator.adaptive(),
-                ),
-              ],
-            ),
-          ),
-        ],
+      child: CustomGridView(
+        scrollController: _scrollController,
+        hasReachedMax: widget.hasReachedMax,
+        mangas: widget.mangas,
       ),
     );
   }
