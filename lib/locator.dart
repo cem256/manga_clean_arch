@@ -38,10 +38,10 @@ abstract final class Locator {
       ..registerFactory<SearchRepository>(() => SearchRepositoryImpl(dataSource: instance()))
       ..registerFactory<FavoritesRepository>(() => FavoritesRepositoryImpl(dataSource: instance()))
       // RemoteDataSources
-      ..registerFactory(() => PopularRemoteDataSource(networkClient: instance()))
-      ..registerFactory(() => SearchRemoteDataSource(networkClient: instance()))
+      ..registerFactory<PopularRemoteDataSource>(() => PopularRemoteDataSourceImpl(networkClient: instance()))
+      ..registerFactory<SearchRemoteDataSource>(() => SearchRemoteDataSourceImpl(networkClient: instance()))
       // LocalDataSources
-      ..registerFactory(() => FavoritesLocalDataSource(cacheClient: instance()))
+      ..registerFactory<FavoritesLocalDataSource>(() => FavoritesLocalDataSourceImpl(cacheClient: instance()))
       // Clients
       ..registerLazySingleton(FavoritesCacheClient.new)
       ..registerLazySingleton(() => NetworkClient(dio: instance(), baseUrl: baseUrl))
