@@ -27,6 +27,9 @@ dependencies:
   # Routing
   auto_route: ^7.7.0
 
+  # Localization
+  easy_localization: ^3.0.2
+
   # Depedency Injection
   get_it: ^7.6.0
 
@@ -72,4 +75,4 @@ flutter:
 
   assets:
     - env/
-    - assets/images/
+    - assets/translations/

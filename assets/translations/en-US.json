@@ -1,0 +1,18 @@
+{
+  "popular": "Popular",
+  "favorites": "Favorites",
+  "noFavorites": "You Don't Have Any Favorites Yet",
+  "retry": "Retry",
+
+  "failure": {
+    "network": "Network Failure",
+    "unknown": "Unknown Failure",
+    "nullResponse": "Cannot Fetch Data"
+  },
+
+  "searchView": {
+    "searchHint": "Search",
+    "statusInitial": "Start Searching for Your Favorite Manga!",
+    "statusNoResult": "No Results Found for '{}'"
+  }
+}

@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
+import 'package:manga_clean_arch/app/l10n/app_l10n.g.dart';
 import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
 
 class CustomErrorWidget extends StatelessWidget {
@@ -15,14 +17,14 @@ class CustomErrorWidget extends StatelessWidget {
       children: [
         Text(
           switch (failure) {
-            NetworkFailure() => 'Network Failure',
-            UnknownFailure() => 'Unknown Failure',
-            NullResponseFailure() => 'Cannot Fetch Data',
+            NetworkFailure() => LocaleKeys.failure_network.tr(),
+            UnknownFailure() => LocaleKeys.failure_unknown.tr(),
+            NullResponseFailure() => LocaleKeys.failure_nullResponse.tr(),
           },
           style: context.textTheme.bodyLarge,
         ),
         TextButton.icon(
-          label: const Text('Retry'),
+          label: Text(LocaleKeys.retry.tr()),
           onPressed: onPressed,
           icon: const Icon(Icons.refresh),
         )

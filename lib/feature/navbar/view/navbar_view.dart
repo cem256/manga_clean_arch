@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:manga_clean_arch/app/l10n/app_l10n.g.dart';
 import 'package:manga_clean_arch/app/router/app_router.gr.dart';
 
 @RoutePage()
@@ -18,14 +20,14 @@ class NavbarView extends StatelessWidget {
           type: BottomNavigationBarType.fixed,
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Popular',
+              icon: const Icon(Icons.book),
+              label: LocaleKeys.popular.tr(),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorites',
+              icon: const Icon(Icons.favorite),
+              label: LocaleKeys.favorites.tr(),
             ),
           ],
         );

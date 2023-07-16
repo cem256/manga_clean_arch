@@ -1,7 +1,9 @@
 import 'package:auto_route/annotations.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:manga_clean_arch/app/l10n/app_l10n.g.dart';
 import 'package:manga_clean_arch/app/theme/theme_constants.dart';
 import 'package:manga_clean_arch/app/widgets/error/custom_error_widget.dart';
 import 'package:manga_clean_arch/app/widgets/grid/custom_grid_view.dart';
@@ -38,7 +40,7 @@ class _SearchViewBody extends StatelessWidget {
           return switch (state.status) {
             SearchStatus.initial => Center(
                 child: Text(
-                  'Start Searching for Your Favorite Manga!',
+                  LocaleKeys.searchView_statusInitial.tr(),
                   style: context.textTheme.bodyLarge,
                 ),
               ),
@@ -47,7 +49,7 @@ class _SearchViewBody extends StatelessWidget {
               ),
             SearchStatus.noResult => Center(
                 child: Text(
-                  "No Results Found for '${state.query}'",
+                  LocaleKeys.searchView_statusNoResult.tr(args: [state.query!]),
                   style: context.textTheme.bodyLarge,
                 ),
               ),

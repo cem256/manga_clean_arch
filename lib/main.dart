@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,6 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:manga_clean_arch/app/env/env.dart';
+import 'package:manga_clean_arch/app/l10n/app_l10n.dart';
 import 'package:manga_clean_arch/app/router/app_router.dart';
 import 'package:manga_clean_arch/app/router/custom_route_observer.dart';
 import 'package:manga_clean_arch/app/theme/cubit/theme_cubit.dart';
@@ -23,7 +25,7 @@ Future<void> main() async {
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory(),
   );
-  // Set Portrait Orientation
+  // Set Screen Orientation
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp],
   );
@@ -33,8 +35,17 @@ Future<void> main() async {
   await Hive.initFlutter();
   // Initialize Locator
   await Locator.locateServices(baseUrl: Env.baseUrl);
+  // Initialize Localization
+  await EasyLocalization.ensureInitialized();
 
-  runApp(MangaAppCleanArch());
+  runApp(
+    EasyLocalization(
+      path: AppL10n.path,
+      supportedLocales: AppL10n.supportedLocales,
+      fallbackLocale: AppL10n.en,
+      child: MangaAppCleanArch(),
+    ),
+  );
 }
 
 class MangaAppCleanArch extends StatelessWidget {
@@ -62,6 +73,10 @@ class MangaAppCleanArch extends StatelessWidget {
             theme: AppThemeLight().theme,
             darkTheme: AppThemeDark().theme,
             themeMode: themeState.themeMode,
+
+            locale: context.locale,
+            supportedLocales: context.supportedLocales,
+            localizationsDelegates: context.localizationDelegates,
 
             // Routing
             routerConfig: _appRouter.config(

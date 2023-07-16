@@ -29,7 +29,7 @@ class _SearchTextFieldState extends State<_SearchTextField> {
       },
       style: TextStyle(color: context.textTheme.bodyLarge?.color),
       borderRadius: BorderRadius.all(ThemeConstants.radiusCircular),
-      placeholder: 'Search',
+      placeholder: LocaleKeys.searchView_searchHint.tr(),
       onChanged: (query) => context.read<SearchBloc>().add(SearchQueryChanged(query: query)),
     );
   }
