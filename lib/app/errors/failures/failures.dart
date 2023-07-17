@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+/// A base class for all the failures in the app
 sealed class Failure extends Equatable {
   @override
   List<Object?> get props => [];

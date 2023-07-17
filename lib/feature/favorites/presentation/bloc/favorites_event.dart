@@ -8,6 +8,7 @@ abstract final class FavoritesEvent extends Equatable {
 }
 
 final class FavoritesFetched extends FavoritesEvent {
+  /// An event to fetch the favorites
   const FavoritesFetched();
 
   @override
@@ -15,6 +16,7 @@ final class FavoritesFetched extends FavoritesEvent {
 }
 
 final class FavoriteButtonTapped extends FavoritesEvent {
+  /// An event to add or remove manga from favorites
   const FavoriteButtonTapped(this.manga);
 
   final MangaEntity manga;

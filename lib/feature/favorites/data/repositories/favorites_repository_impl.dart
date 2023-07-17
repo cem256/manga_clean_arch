@@ -10,6 +10,7 @@ class FavoritesRepositoryImpl implements FavoritesRepository {
   final FavoritesLocalDataSource _dataSource;
 
   @override
+  // Get all favorites from local cache
   Either<Failure, List<MangaEntity>> getFavorites() {
     try {
       final favorites = _dataSource.getFavorites();
@@ -21,6 +22,7 @@ class FavoritesRepositoryImpl implements FavoritesRepository {
   }
 
   @override
+  // If item is already in favorites, remove it, otherwise add it
   Future<Either<Failure, List<MangaEntity>>> addOrRemoveItem(MangaEntity item) async {
     try {
       final favorites = _dataSource.getFavorites();

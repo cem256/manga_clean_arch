@@ -3,6 +3,8 @@ import 'package:dio_smart_retry/dio_smart_retry.dart';
 
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
+// Defining a network client using Dio
+/// Instance of this class can be used to make network calls
 final class NetworkClient {
   NetworkClient({
     required Dio dio,

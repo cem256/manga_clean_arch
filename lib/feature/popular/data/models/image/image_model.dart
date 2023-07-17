@@ -13,6 +13,7 @@ class ImageModel {
 }
 
 extension ImageModelX on ImageModel {
+  /// Converts [ImageModel] to [ImageEntity]
   ImageEntity toImageEntity() {
     return ImageEntity(
       jpg: jpg?.toJpgEntity() ?? ImageEntity.initial().jpg,

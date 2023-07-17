@@ -20,6 +20,7 @@ class MangaModel {
 }
 
 extension MangaModelX on MangaModel {
+  /// Converts [MangaModel] to [MangaEntity]
   MangaEntity toMangaEntity() {
     return MangaEntity(
       malId: malId ?? MangaEntity.initial().malId,

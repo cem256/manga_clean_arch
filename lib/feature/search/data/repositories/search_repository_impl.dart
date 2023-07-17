@@ -13,14 +13,21 @@ class SearchRepositoryImpl implements SearchRepository {
   final SearchRemoteDataSource _dataSource;
 
   @override
+  // Gets list of mangas matches the given query
+  // from the remote data source and returns a list of [MangaEntity] or a [Failure].
   Future<Either<Failure, List<MangaEntity>>> searchMangas({required String query}) async {
     try {
+      // Get list of [MangaModel] from the remote data source.
       final response = await _dataSource.searchMangas(query: query);
+      // Map the list of [MangaModel] to a list of [MangaEntity].
       return right(response.map((e) => e.toMangaEntity()).toList());
+      // On DioException, return a [NetworkFailure].
     } on DioException {
       return left(NetworkFailure());
+      // On NullResponseException, return a [NullResponseFailure].
     } on NullResponseException {
       return left(NullResponseFailure());
+      // On any other exception, return a [UnknownFailure] and print the error.
     } catch (e) {
       debugPrint(e.toString());
       return left(UnknownFailure());

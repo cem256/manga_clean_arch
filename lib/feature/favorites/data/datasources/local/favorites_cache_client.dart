@@ -5,10 +5,12 @@ import 'package:manga_clean_arch/feature/popular/domain/entities/image/image_ent
 import 'package:manga_clean_arch/feature/popular/domain/entities/image/jpg/jpg_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
+/// Cache client for favorites
 class FavoritesCacheClient extends CacheClientInterface<MangaEntity> {
   @override
   String get boxName => CacheConstants.favoritesBox;
 
+  // Registering adapters for Hive
   @override
   void registerAdapters() {
     if (!Hive.isAdapterRegistered(CacheConstants.mangaEntityTypeId)) {

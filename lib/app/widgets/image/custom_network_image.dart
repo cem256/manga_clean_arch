@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+/// Custom widget that is used to display images from the network
 class CustomNetworkImage extends StatelessWidget {
   const CustomNetworkImage({
     required this.imageUrl,

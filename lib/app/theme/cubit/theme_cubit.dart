@@ -7,6 +7,9 @@ part 'theme_state.dart';
 class ThemeCubit extends HydratedCubit<ThemeState> {
   ThemeCubit() : super(const ThemeState());
 
+  /// Takes a [Brightness] object and changes the theme
+  ///
+  /// If the brightness is dark, then the theme is changed to light
   void changeTheme({required Brightness brightness}) {
     brightness == Brightness.dark
         ? emit(const ThemeState(themeMode: ThemeMode.light))

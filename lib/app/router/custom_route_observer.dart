@@ -3,6 +3,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+/// Custom route observer that logs all route changes
 class CustomRouteObserver extends AutoRouteObserver {
   @override
   void didPush(Route route, Route? previousRoute) {

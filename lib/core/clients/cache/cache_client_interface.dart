@@ -1,5 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
 
+/// A base class for all the cache clients in the app
+/// Any new cache client should extend this class by specifying the type of data it will be storing
 abstract class CacheClientInterface<T> {
   String get boxName;
   Box<T>? _box;

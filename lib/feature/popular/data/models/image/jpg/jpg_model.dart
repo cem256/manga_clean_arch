@@ -14,6 +14,7 @@ class JpgModel {
 }
 
 extension JpgModelX on JpgModel {
+  /// Converts [JpgModel] to [JpgEntity]
   JpgEntity toJpgEntity() {
     return JpgEntity(
       imageUrl: imageUrl ?? JpgEntity.initial().imageUrl,

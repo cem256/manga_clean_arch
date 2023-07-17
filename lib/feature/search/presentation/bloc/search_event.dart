@@ -7,6 +7,7 @@ abstract final class SearchEvent extends Equatable {
   List<Object> get props => [];
 }
 
+/// Event to fetch the search results
 final class SearchQueryChanged extends SearchEvent {
   const SearchQueryChanged({required this.query});
 
@@ -15,6 +16,7 @@ final class SearchQueryChanged extends SearchEvent {
   List<Object> get props => [query];
 }
 
+/// Event to clear the search field
 final class SearchFieldCleared extends SearchEvent {
   @override
   List<Object> get props => [];

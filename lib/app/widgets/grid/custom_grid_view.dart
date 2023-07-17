@@ -23,7 +23,7 @@ class CustomGridView extends StatelessWidget {
       itemCount: (hasReachedMax ?? true) ? mangas.length : mangas.length + 2,
       itemBuilder: (context, index) {
         return index >= mangas.length
-            ? const CircularProgressIndicator.adaptive()
+            ? const Center(child: CircularProgressIndicator.adaptive())
             : CustomMangaCard(manga: mangas[index]);
       },
     );

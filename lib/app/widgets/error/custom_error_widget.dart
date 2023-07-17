@@ -4,6 +4,9 @@ import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/app/l10n/app_l10n.g.dart';
 import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
 
+/// Takes  [Failure] as a parameter and displays the error message accodingly
+///
+/// Takes an optional onPressed function for the retry action
 class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget({required this.failure, super.key, this.onPressed});
 

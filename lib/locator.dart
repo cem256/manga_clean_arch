@@ -19,9 +19,13 @@ import 'package:manga_clean_arch/feature/search/domain/repositories/search_repos
 import 'package:manga_clean_arch/feature/search/domain/usecases/uc_search_mangas.dart';
 import 'package:manga_clean_arch/feature/search/presentation/bloc/search_bloc.dart';
 
+/// [Locator] is responsible for locating and registering all the
+/// services of the application.
 abstract final class Locator {
+  /// [GetIt] instance
   static final instance = GetIt.instance;
 
+  /// Responsible for registering all the dependencies
   static Future<void> locateServices({required String baseUrl}) async {
     // Blocs
     instance
