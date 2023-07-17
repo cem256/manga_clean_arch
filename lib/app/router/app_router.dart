@@ -5,7 +5,7 @@ import 'package:manga_clean_arch/app/router/app_router.gr.dart';
 
 /// Holds all the routes that are defined in the app
 /// Used to generate the Router object
-class AppRouter extends $AppRouter {
+final class AppRouter extends $AppRouter {
   @override
   List<AdaptiveRoute> get routes => [
         AdaptiveRoute(

@@ -6,7 +6,7 @@ import 'package:manga_clean_arch/feature/popular/domain/entities/image/jpg/jpg_e
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
 /// Cache client for favorites
-class FavoritesCacheClient extends CacheClientInterface<MangaEntity> {
+final class FavoritesCacheClient extends CacheClientInterface<MangaEntity> {
   @override
   String get boxName => CacheConstants.favoritesBox;
 

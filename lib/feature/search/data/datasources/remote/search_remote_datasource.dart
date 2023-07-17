@@ -10,7 +10,7 @@ abstract interface class SearchRemoteDataSource {
   Future<List<MangaModel>> searchMangas({required String query});
 }
 
-class SearchRemoteDataSourceImpl implements SearchRemoteDataSource {
+final class SearchRemoteDataSourceImpl implements SearchRemoteDataSource {
   SearchRemoteDataSourceImpl({required NetworkClient networkClient}) : _networkClient = networkClient;
 
   final NetworkClient _networkClient;

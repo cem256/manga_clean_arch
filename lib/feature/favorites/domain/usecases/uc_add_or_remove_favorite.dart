@@ -3,7 +3,7 @@ import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/feature/favorites/domain/repositories/favorites_repository.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
-class UCAddOrRemoveFavorite {
+final class UCAddOrRemoveFavorite {
   UCAddOrRemoveFavorite({required FavoritesRepository repository}) : _repository = repository;
 
   final FavoritesRepository _repository;

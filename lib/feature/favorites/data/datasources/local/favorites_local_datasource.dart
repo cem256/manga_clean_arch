@@ -9,7 +9,7 @@ abstract interface class FavoritesLocalDataSource {
   Future<void> removeFromFavorites(int index);
 }
 
-class FavoritesLocalDataSourceImpl implements FavoritesLocalDataSource {
+final class FavoritesLocalDataSourceImpl implements FavoritesLocalDataSource {
   FavoritesLocalDataSourceImpl({required FavoritesCacheClient cacheClient}) : _cacheClient = cacheClient;
 
   final FavoritesCacheClient _cacheClient;

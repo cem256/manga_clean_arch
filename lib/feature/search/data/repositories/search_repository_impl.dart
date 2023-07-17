@@ -8,7 +8,7 @@ import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_ent
 import 'package:manga_clean_arch/feature/search/data/datasources/remote/search_remote_datasource.dart';
 import 'package:manga_clean_arch/feature/search/domain/repositories/search_repository.dart';
 
-class SearchRepositoryImpl implements SearchRepository {
+final class SearchRepositoryImpl implements SearchRepository {
   SearchRepositoryImpl({required SearchRemoteDataSource dataSource}) : _dataSource = dataSource;
   final SearchRemoteDataSource _dataSource;
 

@@ -3,7 +3,7 @@ import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/repositories/popular_repository.dart';
 
-class UCGetPopularMangas {
+final class UCGetPopularMangas {
   UCGetPopularMangas({required PopularRepository repository}) : _repository = repository;
 
   final PopularRepository _repository;

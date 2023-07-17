@@ -4,7 +4,7 @@ import 'package:manga_clean_arch/feature/favorites/data/datasources/local/favori
 import 'package:manga_clean_arch/feature/favorites/domain/repositories/favorites_repository.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
-class FavoritesRepositoryImpl implements FavoritesRepository {
+final class FavoritesRepositoryImpl implements FavoritesRepository {
   FavoritesRepositoryImpl({required FavoritesLocalDataSource dataSource}) : _dataSource = dataSource;
 
   final FavoritesLocalDataSource _dataSource;

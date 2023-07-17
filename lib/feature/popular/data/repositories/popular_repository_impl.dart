@@ -8,7 +8,7 @@ import 'package:manga_clean_arch/feature/popular/data/models/manga/manga_model.d
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/repositories/popular_repository.dart';
 
-class PopularRepositoryImpl implements PopularRepository {
+final class PopularRepositoryImpl implements PopularRepository {
   PopularRepositoryImpl({required PopularRemoteDataSource dataSource}) : _dataSource = dataSource;
 
   final PopularRemoteDataSource _dataSource;

@@ -10,7 +10,7 @@ abstract interface class PopularRemoteDataSource {
   Future<List<MangaModel>> getPopularMangas({required int page, required int limit});
 }
 
-class PopularRemoteDataSourceImpl implements PopularRemoteDataSource {
+final class PopularRemoteDataSourceImpl implements PopularRemoteDataSource {
   PopularRemoteDataSourceImpl({required NetworkClient networkClient}) : _networkClient = networkClient;
 
   final NetworkClient _networkClient;
