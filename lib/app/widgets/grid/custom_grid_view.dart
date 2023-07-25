@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_field_initializers_in_const_classes
+
 import 'package:flutter/material.dart';
 import 'package:manga_clean_arch/app/widgets/card/custom_manga_card.dart';
 import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
@@ -10,6 +12,9 @@ class CustomGridView extends StatelessWidget {
   final ScrollController? scrollController;
   final bool? hasReachedMax;
 
+  final int _crossAxisCount = 2;
+  final double _childAspectRatio = 3 / 4;
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -17,10 +22,10 @@ class CustomGridView extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         mainAxisSpacing: context.defaultValue,
         crossAxisSpacing: context.defaultValue,
-        childAspectRatio: 3 / 4,
-        crossAxisCount: 2,
+        childAspectRatio: _childAspectRatio,
+        crossAxisCount: _crossAxisCount,
       ),
-      itemCount: (hasReachedMax ?? true) ? mangas.length : mangas.length + 2,
+      itemCount: (hasReachedMax ?? true) ? mangas.length : mangas.length + _crossAxisCount,
       itemBuilder: (context, index) {
         return index >= mangas.length
             ? const Center(child: CircularProgressIndicator.adaptive())

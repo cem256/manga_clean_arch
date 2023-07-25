@@ -16,7 +16,9 @@ class FavoritesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleKeys.favorites.tr()),
+        title: Text(
+          LocaleKeys.favorites.tr(),
+        ),
       ),
       body: BlocBuilder<FavoritesBloc, FavoritesState>(
         builder: (context, state) {

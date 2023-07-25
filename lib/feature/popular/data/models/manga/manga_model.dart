@@ -17,9 +17,7 @@ class MangaModel {
   final String? title;
   final String? synopsis;
   final String? background;
-}
 
-extension MangaModelX on MangaModel {
   /// Converts [MangaModel] to [MangaEntity]
   MangaEntity toMangaEntity() {
     return MangaEntity(

@@ -11,9 +11,7 @@ class JpgModel {
 
   @JsonKey(name: 'image_url')
   final String? imageUrl;
-}
 
-extension JpgModelX on JpgModel {
   /// Converts [JpgModel] to [JpgEntity]
   JpgEntity toJpgEntity() {
     return JpgEntity(

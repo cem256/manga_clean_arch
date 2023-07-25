@@ -49,7 +49,7 @@ class _SearchViewBody extends StatelessWidget {
               ),
             SearchStatus.noResult => Center(
                 child: Text(
-                  LocaleKeys.searchView_statusNoResult.tr(args: [state.query!]),
+                  LocaleKeys.searchView_statusNoResult.tr(args: [state.query ?? '']),
                   style: context.textTheme.bodyLarge,
                 ),
               ),
@@ -57,7 +57,7 @@ class _SearchViewBody extends StatelessWidget {
                 child: CustomErrorWidget(
                   failure: state.failure!,
                   onPressed: () => context.read<SearchBloc>().add(
-                        SearchQueryChanged(query: state.query!),
+                        SearchQueryChanged(query: state.query ?? ''),
                       ),
                 ),
               ),

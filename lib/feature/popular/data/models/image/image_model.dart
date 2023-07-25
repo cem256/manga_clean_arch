@@ -10,9 +10,7 @@ class ImageModel {
   factory ImageModel.fromJson(Map<String, dynamic> data) => _$ImageModelFromJson(data);
 
   final JpgModel? jpg;
-}
 
-extension ImageModelX on ImageModel {
   /// Converts [ImageModel] to [ImageEntity]
   ImageEntity toImageEntity() {
     return ImageEntity(

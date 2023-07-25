@@ -8,7 +8,13 @@ class _SearchTextField extends StatefulWidget {
 }
 
 class _SearchTextFieldState extends State<_SearchTextField> {
-  final TextEditingController _searchController = TextEditingController();
+  late final TextEditingController _searchController;
+
+  @override
+  void initState() {
+    super.initState();
+    _searchController = TextEditingController();
+  }
 
   @override
   void dispose() {

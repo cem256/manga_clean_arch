@@ -7,6 +7,12 @@ import 'package:manga_clean_arch/core/extensions/context_extensions.dart';
 import 'package:manga_clean_arch/feature/favorites/presentation/bloc/favorites_bloc.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 
+part '../widgets/detail_view_background_image.dart';
+part '../widgets/detail_view_fade_effect.dart';
+part '../widgets/detail_view_favorites_button.dart';
+part '../widgets/detail_view_left_image.dart';
+part '../widgets/detail_view_manga_synopsis.dart';
+
 @RoutePage()
 class DetailView extends StatelessWidget {
   const DetailView({required this.manga, super.key});
@@ -24,86 +30,26 @@ class DetailView extends StatelessWidget {
           children: [
             Stack(
               children: [
-                SizedBox(
-                  height: context.veryhighValue4x,
-                  width: double.infinity,
-                  child: CustomNetworkImage(imageUrl: manga.images.jpg.imageUrl, fit: BoxFit.fitWidth),
+                _DetailViewBackgroundImage(
+                  manga: manga,
                 ),
-                Container(
-                  height: context.veryhighValue4x,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: FractionalOffset.topCenter,
-                      end: FractionalOffset.bottomCenter,
-                      colors: [
-                        Colors.transparent,
-                        context.theme.scaffoldBackgroundColor,
-                      ],
-                    ),
-                  ),
-                ),
+                const _DetailViewFadeEffect(),
                 Positioned(
                   left: 0,
                   bottom: 0,
-                  child: Padding(
-                    padding: context.paddingAllDefault,
-                    child: SizedBox(
-                      height: context.veryhighValue2x,
-                      child: ClipRRect(
-                        borderRadius: ThemeConstants.borderRadiusCircular,
-                        child: CustomNetworkImage(
-                          imageUrl: manga.images.jpg.imageUrl,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                  ),
+                  child: _DetailViewLeftImage(manga: manga),
                 ),
                 Positioned(
                   right: 0,
                   bottom: 0,
-                  child: Padding(
-                    padding: context.paddingAllDefault,
-                    child: BlocBuilder<FavoritesBloc, FavoritesState>(
-                      builder: (context, state) {
-                        return IconButton(
-                          onPressed: () => context.read<FavoritesBloc>().add(FavoriteButtonTapped(manga)),
-                          icon: Icon(
-                            Icons.favorite,
-                            size: context.highValue,
-                            color: state.mangas.any((favorite) => favorite.malId == manga.malId)
-                                ? context.theme.colorScheme.error
-                                : context.theme.colorScheme.outline,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
+                  child: _DetailViewFavoritesButton(manga: manga),
                 )
               ],
             ),
             SizedBox(
               height: context.defaultValue,
             ),
-            Padding(
-              padding: context.paddingAllDefault,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    manga.title,
-                    style: context.textTheme.titleLarge,
-                  ),
-                  SizedBox(
-                    height: context.defaultValue,
-                  ),
-                  Text(
-                    manga.synopsis,
-                    style: context.textTheme.bodyLarge,
-                  ),
-                ],
-              ),
-            ),
+            _DetailViewMangaSynopsis(manga: manga),
           ],
         ),
       ),

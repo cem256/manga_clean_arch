@@ -19,7 +19,7 @@ final class SearchRemoteDataSourceImpl implements SearchRemoteDataSource {
   // Returns a list of [MangaModel] that match the query.
   Future<List<MangaModel>> searchMangas({required String query}) async {
     try {
-      // Get popular mangas from API using [NetworkClient]
+      // Get mangas that match the given query from API using [NetworkClient]
       final response = await _networkClient.get<Map<String, dynamic>>(
         EndpointConstants.search,
         queryParameters: {

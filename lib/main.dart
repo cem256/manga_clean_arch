@@ -20,6 +20,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Initialize Bloc Observer
   Bloc.observer = CustomBlocObserver();
+
   // Initialize Hydrated Bloc for Caching Theme Preference
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory(),
@@ -36,7 +37,6 @@ Future<void> main() async {
   await EasyLocalization.ensureInitialized();
 
   runApp(
-    // Initialize Easy Localization
     EasyLocalization(
       path: AppL10n.path,
       supportedLocales: AppL10n.supportedLocales,
