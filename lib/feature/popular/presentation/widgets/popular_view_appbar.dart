@@ -12,13 +12,13 @@ class _PopularViewAppBar extends StatelessWidget implements PreferredSizeWidget 
       centerTitle: true,
       title: Text(LocaleKeys.popular.tr()),
       leading: IconButton(
-        icon: Icon(context.brightness == Brightness.dark ? Icons.light_mode : Icons.dark_mode),
+        icon: Icon(context.brightness == Brightness.dark ? Icons.light_mode_rounded : Icons.dark_mode_rounded),
         onPressed: () => context.read<ThemeCubit>().changeTheme(brightness: context.brightness),
       ),
       actions: [
         IconButton(
           onPressed: () => context.router.push(const SearchRoute()),
-          icon: const Icon(Icons.search),
+          icon: const Icon(Icons.search_rounded),
         ),
       ],
     );

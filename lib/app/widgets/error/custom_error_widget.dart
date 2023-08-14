@@ -29,7 +29,7 @@ class CustomErrorWidget extends StatelessWidget {
         TextButton.icon(
           label: Text(LocaleKeys.retry.tr()),
           onPressed: onPressed,
-          icon: const Icon(Icons.refresh),
+          icon: const Icon(Icons.refresh_rounded),
         )
       ],
     );

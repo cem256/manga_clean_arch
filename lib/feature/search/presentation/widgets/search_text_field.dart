@@ -27,8 +27,8 @@ class _SearchTextFieldState extends State<_SearchTextField> {
     return CupertinoSearchTextField(
       autofocus: true,
       controller: _searchController,
-      prefixIcon: const Icon(Icons.search),
-      suffixIcon: const Icon(Icons.clear),
+      prefixIcon: const Icon(Icons.search_rounded),
+      suffixIcon: const Icon(Icons.clear_rounded),
       onSuffixTap: () {
         _searchController.clear();
         context.read<SearchBloc>().add(SearchFieldCleared());
