@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:manga_clean_arch/feature/popular/data/models/genre/genre_model.dart';
 import 'package:manga_clean_arch/feature/popular/data/models/image/image_model.dart';
@@ -6,8 +7,8 @@ import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_ent
 part 'manga_model.g.dart';
 
 @JsonSerializable(createToJson: false)
-class MangaModel {
-  MangaModel({
+class MangaModel extends Equatable {
+  const MangaModel({
     this.malId,
     this.url,
     this.images,
@@ -46,4 +47,7 @@ class MangaModel {
       genres: genres?.map((element) => element.toEntity()).toList() ?? MangaEntity.initial().genres,
     );
   }
+
+  @override
+  List<Object?> get props => [malId, url, images, title, synopsis, rank, score, members, genres];
 }
