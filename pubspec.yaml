@@ -43,6 +43,7 @@ dependencies:
   stream_transform: ^2.1.0
 
   # UI
+  lottie: ^2.6.0
   cupertino_icons: ^1.0.2
   flex_color_scheme: ^7.1.2
   cached_network_image: ^3.2.3
@@ -70,3 +71,4 @@ flutter:
 
   assets:
     - assets/translations/
+    - assets/animations/

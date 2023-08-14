@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manga_clean_arch/app/l10n/app_l10n.g.dart';
 import 'package:manga_clean_arch/app/router/app_router.gr.dart';
-import 'package:manga_clean_arch/app/theme/cubit/theme_cubit.dart';
+import 'package:manga_clean_arch/app/widgets/animation/animated_theme_switch.dart';
 import 'package:manga_clean_arch/app/widgets/error/custom_error_widget.dart';
 import 'package:manga_clean_arch/app/widgets/grid/custom_grid_view.dart';
 import 'package:manga_clean_arch/core/enums/view_status.dart';

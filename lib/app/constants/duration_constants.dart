@@ -1,5 +1,8 @@
 /// A class that contains all the duration constants in the app
 final class DurationConstants extends Duration {
+  /// Duration of half second
+  DurationConstants.veryShort() : super(milliseconds: 500);
+
   /// Duration of 1 second
   DurationConstants.short() : super(seconds: 1);
 

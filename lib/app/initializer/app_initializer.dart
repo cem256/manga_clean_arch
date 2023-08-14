@@ -7,7 +7,7 @@ import 'package:manga_clean_arch/core/utils/observers/custom_bloc_observer.dart'
 import 'package:manga_clean_arch/locator.dart';
 import 'package:path_provider/path_provider.dart';
 
-abstract class AppInitialize {
+abstract class AppInitializer {
   static Future<void> initialize() async {
     // Initialize Bloc Observer
     Bloc.observer = CustomBlocObserver();
