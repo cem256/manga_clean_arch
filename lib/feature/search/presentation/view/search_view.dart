@@ -42,6 +42,7 @@ class _SearchViewBody extends StatelessWidget {
                 child: Text(
                   LocaleKeys.searchView_statusInitial.tr(),
                   style: context.textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
               ),
             SearchStatus.loading => const Center(
@@ -51,6 +52,7 @@ class _SearchViewBody extends StatelessWidget {
                 child: Text(
                   LocaleKeys.searchView_statusNoResult.tr(args: [state.query ?? '']),
                   style: context.textTheme.bodyLarge,
+                  textAlign: TextAlign.center,
                 ),
               ),
             SearchStatus.failure => Center(

@@ -17,7 +17,7 @@ class _DetailViewFavoritesButton extends StatelessWidget {
               Icons.star,
               size: context.highValue,
               color: state.mangas.any((favorite) => favorite.malId == manga.malId)
-                  ? context.theme.colorScheme.secondary
+                  ? context.theme.colorScheme.error
                   : context.theme.colorScheme.outline,
             ),
           );

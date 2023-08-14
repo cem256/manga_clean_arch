@@ -13,7 +13,7 @@ class JpgModel {
   final String? imageUrl;
 
   /// Converts [JpgModel] to [JpgEntity]
-  JpgEntity toJpgEntity() {
+  JpgEntity toEntity() {
     return JpgEntity(
       imageUrl: imageUrl ?? JpgEntity.initial().imageUrl,
     );

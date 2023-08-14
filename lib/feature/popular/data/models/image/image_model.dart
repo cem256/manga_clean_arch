@@ -12,9 +12,9 @@ class ImageModel {
   final JpgModel? jpg;
 
   /// Converts [ImageModel] to [ImageEntity]
-  ImageEntity toImageEntity() {
+  ImageEntity toEntity() {
     return ImageEntity(
-      jpg: jpg?.toJpgEntity() ?? ImageEntity.initial().jpg,
+      jpg: jpg?.toEntity() ?? ImageEntity.initial().jpg,
     );
   }
 }

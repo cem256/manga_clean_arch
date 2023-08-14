@@ -19,7 +19,7 @@ final class SearchRepositoryImpl implements SearchRepository {
       // Get list of [MangaModel] from the remote data source.
       final response = await _dataSource.searchMangas(query: query);
       // Map the list of [MangaModel] to a list of [MangaEntity].
-      return right(response.map((e) => e.toMangaEntity()).toList());
+      return right(response.map((e) => e.toEntity()).toList());
       // On DioException, return a [NetworkFailure].
     } on DioException {
       return left(NetworkFailure());
