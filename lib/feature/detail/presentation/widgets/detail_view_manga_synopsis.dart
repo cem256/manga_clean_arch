@@ -14,7 +14,7 @@ class _DetailViewMangaSynopsis extends StatelessWidget {
         children: [
           Text(
             manga.title,
-            style: context.textTheme.titleLarge,
+            style: context.textTheme.headlineMedium,
           ),
           SizedBox(
             height: context.defaultValue,

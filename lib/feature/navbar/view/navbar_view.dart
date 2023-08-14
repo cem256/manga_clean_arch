@@ -26,7 +26,7 @@ class NavbarView extends StatelessWidget {
               label: LocaleKeys.popular.tr(),
             ),
             BottomNavigationBarItem(
-              icon: const Icon(Icons.favorite),
+              icon: const Icon(Icons.star),
               label: LocaleKeys.favorites.tr(),
             ),
           ],

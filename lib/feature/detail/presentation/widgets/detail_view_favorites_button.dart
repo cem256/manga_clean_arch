@@ -14,10 +14,10 @@ class _DetailViewFavoritesButton extends StatelessWidget {
           return IconButton(
             onPressed: () => context.read<FavoritesBloc>().add(FavoriteButtonTapped(manga)),
             icon: Icon(
-              Icons.favorite,
+              Icons.star,
               size: context.highValue,
               color: state.mangas.any((favorite) => favorite.malId == manga.malId)
-                  ? context.theme.colorScheme.error
+                  ? context.theme.colorScheme.secondary
                   : context.theme.colorScheme.outline,
             ),
           );

@@ -9,6 +9,7 @@ class _PopularViewAppBar extends StatelessWidget implements PreferredSizeWidget 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       title: Text(LocaleKeys.popular.tr()),
       leading: IconButton(
         icon: Icon(context.brightness == Brightness.dark ? Icons.light_mode : Icons.dark_mode),
