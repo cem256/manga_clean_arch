@@ -14,5 +14,10 @@
     "searchHint": "Search",
     "statusInitial": "Start Searching for Your Favorite Manga!",
     "statusNoResult": "No Results Found for '{}'"
+  },
+  "detailView": {
+    "rank": "Rank",
+    "rating": "Rating",
+    "members": "Members"
   }
 }

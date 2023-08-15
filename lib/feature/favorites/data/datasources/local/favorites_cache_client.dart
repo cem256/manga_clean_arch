@@ -1,6 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
 import 'package:manga_clean_arch/app/constants/cache_constants.dart';
 import 'package:manga_clean_arch/core/clients/cache/cache_client_interface.dart';
+import 'package:manga_clean_arch/feature/popular/domain/entities/genre/genre_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/image/image_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/image/jpg/jpg_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
@@ -17,7 +18,8 @@ final class FavoritesCacheClient extends CacheClientInterface<MangaEntity> {
       Hive
         ..registerAdapter(MangaEntityAdapter())
         ..registerAdapter(ImageEntityAdapter())
-        ..registerAdapter(JpgEntityAdapter());
+        ..registerAdapter(JpgEntityAdapter())
+        ..registerAdapter(GenreEntityAdapter());
     }
   }
 }

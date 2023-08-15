@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:manga_clean_arch/app/constants/cache_constants.dart';
+import 'package:manga_clean_arch/feature/popular/domain/entities/genre/genre_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/image/image_entity.dart';
 
 part 'manga_entity.g.dart';
@@ -13,7 +14,10 @@ class MangaEntity extends HiveObject with EquatableMixin {
     required this.images,
     required this.title,
     required this.synopsis,
-    required this.background,
+    required this.rank,
+    required this.score,
+    required this.members,
+    required this.genres,
   });
 
   factory MangaEntity.initial() => MangaEntity(
@@ -22,7 +26,10 @@ class MangaEntity extends HiveObject with EquatableMixin {
         images: ImageEntity.initial(),
         title: '',
         synopsis: '',
-        background: '',
+        rank: 0,
+        score: 0,
+        members: 0,
+        genres: [],
       );
 
   @HiveField(0)
@@ -36,8 +43,14 @@ class MangaEntity extends HiveObject with EquatableMixin {
   @HiveField(4)
   final String synopsis;
   @HiveField(5)
-  final String background;
+  final int rank;
+  @HiveField(6)
+  final double score;
+  @HiveField(7)
+  final int members;
+  @HiveField(8)
+  final List<GenreEntity> genres;
 
   @override
-  List<Object?> get props => [malId, url, images, title, synopsis, background];
+  List<Object?> get props => [malId, url, images, title, synopsis, rank, score, members, genres];
 }
