@@ -35,15 +35,26 @@ class _AnimatedThemeSwitchState extends State<AnimatedThemeSwitch> with SingleTi
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _controller.animateTo(context.brightness == Brightness.dark ? 0.5 : 1);
+        _controller.animateTo(
+          context.brightness == Brightness.dark ? _SwitchPosition.right.value : _SwitchPosition.left.value,
+        );
         context.read<ThemeCubit>().changeTheme(brightness: context.brightness);
       },
       child: Lottie.asset(
-        fit: BoxFit.none,
-        AssetConstants.themeSwitchAnimation,
         controller: _controller,
-        onLoaded: (_) => _controller.value = context.brightness == Brightness.dark ? 1 : 0.5,
+        AssetConstants.themeSwitchAnimation,
+        onLoaded: (_) => _controller.value =
+            context.brightness == Brightness.dark ? _SwitchPosition.left.value : _SwitchPosition.right.value,
+        fit: BoxFit.none,
       ),
     );
   }
+}
+
+enum _SwitchPosition {
+  left(1),
+  right(0.5);
+
+  const _SwitchPosition(this.value);
+  final double value;
 }
