@@ -20,7 +20,7 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<SearchBloc>(
-      create: (context) => Locator.instance<SearchBloc>(),
+      create: (context) => Locator.searchBloc,
       child: const _SearchViewBody(),
     );
   }
