@@ -25,7 +25,7 @@ class PopularView extends StatelessWidget {
     return Scaffold(
       appBar: const _PopularViewAppBar(),
       body: BlocProvider<PopularBloc>(
-        create: (context) => Locator.instance<PopularBloc>()..add(MangasFetched()),
+        create: (context) => Locator.popularBloc..add(MangasFetched()),
         child: const PopularViewBody(),
       ),
     );

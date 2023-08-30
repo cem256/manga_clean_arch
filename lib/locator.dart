@@ -23,37 +23,46 @@ import 'package:manga_clean_arch/feature/search/presentation/bloc/search_bloc.da
 /// services of the application.
 abstract final class Locator {
   /// [GetIt] instance
-  static final instance = GetIt.instance;
+  static final _instance = GetIt.instance;
+
+  /// Returns instance of [PopularBloc]
+  static PopularBloc get popularBloc => _instance<PopularBloc>();
+
+  /// Returns instance of [SearchBloc]
+  static SearchBloc get searchBloc => _instance<SearchBloc>();
+
+  /// Returns instance of [FavoritesBloc]
+  static FavoritesBloc get favoritesBloc => _instance<FavoritesBloc>();
 
   /// Responsible for registering all the dependencies
   static Future<void> locateServices({required String baseUrl}) async {
     // Blocs
-    instance
-      ..registerFactory(() => PopularBloc(getPopularMangas: instance()))
-      ..registerFactory(() => SearchBloc(searchMangas: instance()))
-      ..registerFactory(() => FavoritesBloc(getFavorites: instance(), addOrRemoveFavorite: instance()))
+    _instance
+      ..registerFactory(() => PopularBloc(getPopularMangas: _instance()))
+      ..registerFactory(() => SearchBloc(searchMangas: _instance()))
+      ..registerFactory(() => FavoritesBloc(getFavorites: _instance(), addOrRemoveFavorite: _instance()))
       // Usecases
-      ..registerFactory(() => UCGetPopularMangas(repository: instance()))
-      ..registerFactory(() => UCSearchMangas(repository: instance()))
-      ..registerFactory(() => UCGetFavorites(repository: instance()))
-      ..registerFactory(() => UCAddOrRemoveFavorite(repository: instance()))
+      ..registerFactory(() => UCGetPopularMangas(repository: _instance()))
+      ..registerFactory(() => UCSearchMangas(repository: _instance()))
+      ..registerFactory(() => UCGetFavorites(repository: _instance()))
+      ..registerFactory(() => UCAddOrRemoveFavorite(repository: _instance()))
       // Repositories
-      ..registerFactory<PopularRepository>(() => PopularRepositoryImpl(dataSource: instance()))
-      ..registerFactory<SearchRepository>(() => SearchRepositoryImpl(dataSource: instance()))
-      ..registerFactory<FavoritesRepository>(() => FavoritesRepositoryImpl(dataSource: instance()))
+      ..registerFactory<PopularRepository>(() => PopularRepositoryImpl(dataSource: _instance()))
+      ..registerFactory<SearchRepository>(() => SearchRepositoryImpl(dataSource: _instance()))
+      ..registerFactory<FavoritesRepository>(() => FavoritesRepositoryImpl(dataSource: _instance()))
       // RemoteDataSources
-      ..registerFactory<PopularRemoteDataSource>(() => PopularRemoteDataSourceImpl(networkClient: instance()))
-      ..registerFactory<SearchRemoteDataSource>(() => SearchRemoteDataSourceImpl(networkClient: instance()))
+      ..registerFactory<PopularRemoteDataSource>(() => PopularRemoteDataSourceImpl(networkClient: _instance()))
+      ..registerFactory<SearchRemoteDataSource>(() => SearchRemoteDataSourceImpl(networkClient: _instance()))
       // LocalDataSources
-      ..registerFactory<FavoritesLocalDataSource>(() => FavoritesLocalDataSourceImpl(cacheClient: instance()))
+      ..registerFactory<FavoritesLocalDataSource>(() => FavoritesLocalDataSourceImpl(cacheClient: _instance()))
       // Clients
       ..registerLazySingleton(FavoritesCacheClient.new)
-      ..registerLazySingleton(() => NetworkClient(dio: instance(), baseUrl: baseUrl))
+      ..registerLazySingleton(() => NetworkClient(dio: _instance(), baseUrl: baseUrl))
 
       // Client Dependencies
       ..registerFactory(Dio.new);
 
     // Initialize Clients
-    await instance<FavoritesCacheClient>().init();
+    await _instance<FavoritesCacheClient>().init();
   }
 }

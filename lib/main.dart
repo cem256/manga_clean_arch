@@ -39,7 +39,7 @@ class MangaAppCleanArch extends StatelessWidget {
           create: (context) => ThemeCubit(),
         ),
         BlocProvider<FavoritesBloc>(
-          create: (_) => Locator.instance<FavoritesBloc>()..add(const FavoritesFetched()),
+          create: (_) => Locator.favoritesBloc..add(const FavoritesFetched()),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
