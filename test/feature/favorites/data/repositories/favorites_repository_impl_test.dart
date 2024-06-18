@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/feature/favorites/data/datasources/local/favorites_local_datasource.dart';
 import 'package:manga_clean_arch/feature/favorites/data/repositories/favorites_repository_impl.dart';

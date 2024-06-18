@@ -52,7 +52,9 @@ Manga app with a feature-first layered clean architecture, generic caching, lazy
 - Localization
   - [EasyLocalization](https://pub.dev/packages/easy_localization)
 - Functional Programming
-  - [Dartz](https://pub.dev/packages/dartz)
+  - [FpDart](https://pub.dev/packages/fpdart)
+- Logging
+  - [Logger](https://pub.dev/packages/logger)
 - Testing
   - [Mocktail](https://pub.dev/packages/mocktail)
   - [BlocTest](https://pub.dev/packages/bloc_test)

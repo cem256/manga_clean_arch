@@ -1,8 +1,8 @@
-import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/widgets.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:manga_clean_arch/app/errors/exceptions/exceptions.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
+import 'package:manga_clean_arch/core/utils/logger/logger_utils.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 import 'package:manga_clean_arch/feature/search/data/datasources/remote/search_remote_datasource.dart';
 import 'package:manga_clean_arch/feature/search/domain/repositories/search_repository.dart';
@@ -28,7 +28,7 @@ final class SearchRepositoryImpl implements SearchRepository {
       return left(NullResponseFailure());
       // On any other exception, return a [UnknownFailure] and print the error.
     } catch (e) {
-      debugPrint(e.toString());
+      LoggerUtils.instance.logError('Error on searchMangas $e');
       return left(UnknownFailure());
     }
   }

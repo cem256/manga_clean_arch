@@ -46,7 +46,7 @@ class DetailView extends StatelessWidget {
                   right: 0,
                   bottom: 0,
                   child: _DetailViewFavoritesButton(manga: manga),
-                )
+                ),
               ],
             ),
             Padding(

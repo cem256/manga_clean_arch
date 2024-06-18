@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/feature/popular/data/datasources/remote/popular_remote_datasource.dart';
 import 'package:manga_clean_arch/feature/popular/data/models/manga/manga_model.dart';

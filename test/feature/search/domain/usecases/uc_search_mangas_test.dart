@@ -1,10 +1,9 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 import 'package:manga_clean_arch/feature/search/domain/repositories/search_repository.dart';
 import 'package:manga_clean_arch/feature/search/domain/usecases/uc_search_mangas.dart';
-
 import 'package:mocktail/mocktail.dart';
 
 class MockSearchRepository extends Mock implements SearchRepository {}
