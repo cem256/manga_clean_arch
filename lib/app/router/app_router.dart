@@ -18,7 +18,7 @@ final class AppRouter extends $AppRouter {
             ),
             AdaptiveRoute(
               page: FavoritesRoute.page,
-            )
+            ),
           ],
         ),
         AdaptiveRoute(page: SearchRoute.page),

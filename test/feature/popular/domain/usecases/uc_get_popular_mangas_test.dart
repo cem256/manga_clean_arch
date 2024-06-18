@@ -1,10 +1,9 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fpdart/fpdart.dart';
 import 'package:manga_clean_arch/app/errors/failures/failures.dart';
 import 'package:manga_clean_arch/feature/popular/domain/entities/manga/manga_entity.dart';
 import 'package:manga_clean_arch/feature/popular/domain/repositories/popular_repository.dart';
 import 'package:manga_clean_arch/feature/popular/domain/usecases/uc_get_popular_mangas.dart';
-
 import 'package:mocktail/mocktail.dart';
 
 class MockPopularRepository extends Mock implements PopularRepository {}

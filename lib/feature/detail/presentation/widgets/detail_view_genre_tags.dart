@@ -21,7 +21,7 @@ class _DetailViewGenreTags extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }
